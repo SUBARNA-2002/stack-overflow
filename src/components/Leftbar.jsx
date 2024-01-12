@@ -54,6 +54,10 @@ function Leftbar() {
           <div className="py-1 text-gray-700">Jobs</div>
         </div>
       </div>
+      <div className="absolute bottom-0">
+        <div className="px-20 my-3 cursor-pointer text-orange-500 rounded-md py-2 w-full border-2 border-orange-500">Log in</div>
+        <div className="px-20 my-3 text-white cursor-pointer rounded-md py-2 w-full  bg-orange-500">Sign up</div>
+      </div>
     </>
   );
 }

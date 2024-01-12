@@ -3,7 +3,7 @@ import React from "react";
 function Navbar() {
   return (
     <>
-      <div className="flex justify-between px-12 py-2 shadow-lg">
+      <div className=" flex justify-between px-12 py-2 shadow-lg">
         <div>
           <img
             className="h-10"
