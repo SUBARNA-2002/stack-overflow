@@ -44,9 +44,9 @@ function Navbar() {
           </>
         </div>
         <div className="flex gap-9 py-3  ">
-          <div>About</div>
-          <div>Product</div>
-          <div>For teams</div>
+          <div className="cursor-pointer">About</div>
+          <div className="cursor-pointer">Product</div>
+          <div className="cursor-pointer">For teams</div>
         </div>
       </div>
     </>

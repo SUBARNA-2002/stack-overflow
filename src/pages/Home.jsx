@@ -1,7 +1,7 @@
 import React from "react";
-import Leftbar from "./components/Leftbar";
-import Mainbar from "./components/Mainbar";
-import Rightbar from "./components/Rightbar";
+import Leftbar from "../components/Leftbar";
+import Mainbar from "../components/Mainbar";
+import Rightbar from "../components/Rightbar";
 
 function Home() {
   return (
