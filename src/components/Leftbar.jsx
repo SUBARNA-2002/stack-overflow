@@ -1,10 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Leftbar() {
+  const navigate = useNavigate();
+  const handleHome = () => {
+    navigate("/");
+  };
   return (
     <>
       <div className="text-xl">
-        <div className="flex gap-5 py-2 px-9 cursor-pointer  ">
+        <div onClick={handleHome} className="flex gap-5 py-2 px-9 cursor-pointer  ">
           <div className="py-1">
             <img
               className="h-7 bg-blend-darken"
@@ -25,7 +30,9 @@ function Leftbar() {
           <div className="py-1 text-gray-700">Public</div>
         </div>
         <div className=" py-2  ">
-          <div className=" px-20 text-orange-500 border-r-4 border-orange-500 cursor-pointer ">Questions</div>
+          <div className=" px-20 text-orange-500 border-r-4 border-orange-500 cursor-pointer ">
+            Questions
+          </div>
         </div>
 
         <div className="px-20 text-gray-600 cursor-pointer">Tags</div>
@@ -55,8 +62,12 @@ function Leftbar() {
         </div>
       </div>
       <div className="absolute bottom-0">
-        <div className="px-20  cursor-pointer text-orange-500 rounded-md py-2 w-full border-2 border-orange-500">Log in</div>
-        <div className="px-20 my-3 text-white cursor-pointer rounded-md py-2 w-full  bg-orange-500">Sign up</div>
+        <div className="px-20  cursor-pointer text-orange-500 rounded-md py-2 w-full border-2 border-orange-500">
+          Log in
+        </div>
+        <div className="px-20 my-3 text-white cursor-pointer rounded-md py-2 w-full  bg-orange-500">
+          Sign up
+        </div>
       </div>
     </>
   );

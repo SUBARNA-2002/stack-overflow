@@ -1,33 +1,10 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-function Mainbar() {
-  const [questions, setQuestions] = useState([]);
+function Mainbar({questions}) {
 
   const navigate = useNavigate();
   
-  useEffect(() => {
-    const fetchQuestions = async () => {
-      try {
-        const response = await axios.get(
-          "https://api.stackexchange.com/2.3/questions",
-          {
-            params: {
-              order: "desc",
-              sort: "activity",
-              site: "stackoverflow",
-              filter: "withbody", 
-            },
-          }
-        );
-        setQuestions(response.data.items);
-      } catch (error) {
-        console.error("Error fetching questions:", error);
-      }
-    };
 
-    fetchQuestions();
-  }, []);
   const formatDate = (timestamp) => {
     const date = new Date(timestamp * 1000);
     const now = new Date();
@@ -46,7 +23,7 @@ function Mainbar() {
   const handleClick = (id) => {
     navigate(`/question/${id}`);
   };
-  console.log(questions)
+  // console.log(questions)
 
   return (
     <>
@@ -112,8 +89,8 @@ function Mainbar() {
 
               <div
                 className="px-6 py-5"
-                dangerouslySetInnerHTML={{ __html: e.body }}
-              />
+                dangerouslySetInnerHTML={{ __html: e.body.length > 300 ? e.body.slice(0, 300) + '...' : e.body }}
+                />
 
               <div className="flex justify-between py-3">
                 <div className="flex  px-6">
@@ -144,9 +121,6 @@ function Mainbar() {
           </>
         );
       })}
-
-      {/*  */}
-      
     </>
   );
 }

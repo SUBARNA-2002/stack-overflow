@@ -1,10 +1,14 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 function Navbar() {
+  const navigate = useNavigate();
+  const handleHome = () => {
+    navigate("/");
+  };
   return (
     <>
       <div className=" flex justify-between px-12 py-2 shadow-lg">
-        <div>
+        <div className="cursor-pointer" onClick={handleHome}>
           <img
             className="h-10"
             src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Stack_Overflow_logo.png"
@@ -13,7 +17,6 @@ function Navbar() {
         </div>
         <div className=" w-[60%] ">
           <>
-            
             <div className="relative  ">
               <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none rounded-lg">
                 <svg
@@ -39,7 +42,6 @@ function Navbar() {
                 placeholder="Search"
                 required=""
               />
-             
             </div>
           </>
         </div>
