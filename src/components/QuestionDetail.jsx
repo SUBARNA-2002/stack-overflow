@@ -127,9 +127,9 @@ function QuestionDetail({ questions, answers }) {
               <div className=" shadow-lg  rounded-lg py-5">
                 <div className="w-full  bg-gray-200 rounded-t">
                   <div className="flex justify-between">
-                    <div className="w[60%] h-[40%] p-6 text-sm flex  ">
+                    <div className=" w-[100%] h-[40%] p-6 text-sm flex">
                       Author : {" "}
-                      <span className="text-orange-500 font-semibold">
+                      <span className="w-[15rem] px-2 text-orange-500 font-semibold">
                         {el.owner.display_name} ({el.owner.reputation})
                       </span>
                       <div className="px-6">Answered : {formatDate(el.creation_date)}</div>
